@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jPreLoader v2 - A jQuery preloader for Website</title>
+<meta name="description" content="jPreLoader plugin is a jQuery preloader to preload images for website."/>
+<link rel="stylesheet" href="css/vendor.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/jpreloader.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="js/vendor.js"></script>
+<script src="js/jpreloader.js"></script>
+<link rel="shortcut icon" href="http://www.inwebson.com/wp-content/themes/inwebson2/favicon.ico" />
+<link rel="canonical" href="http://www.inwebson.com/demo/jpreloader-v2/" />
+</head>
+
+<body>
+<!-- Header -->
+<header id="header">
+	<h1>jPreLoader v2- A jQuery preloader for Website</h1>
+	<div id="backlinks">
+		<a href="http://www.inwebson.com/jquery/jpreloader-a-preloading-screen-to-preload-images/">Back to Article &raquo;</a>
+		<a href="http://www.inwebson.com">Visit inWebson.com &raquo;</a>
+	</div>
+	<div class="clearfix"></div>
+</header>
+
+
+<section id="wrapper">
+	<div class="wrapper-inner">
+	<hgroup>
+		<h2>jPreLoader v2</h2>
+		<h3>A loading screen to preload images using jQuery</h3>
+	</hgroup>
+	<nav id="navigation">
+		<a href="#set1" class="btn btn-small btn-main ">&lt;img&gt; tag</a>
+		<a href="#set2" class="btn btn-small btn-secondary">CSS background-image</a>
+		<div class=clearfix></div>
+	</nav>
+	<div class="container">
+	<ul id="set1" class="holder current">
+		<li><img src="http://sphotos-b.ak.fbcdn.net/hphotos-ak-snc6/181548_153793501342544_153515891370305_259700_7241508_n.jpg" /></li>
+		<li><img src="http://sphotos-b.ak.fbcdn.net/hphotos-ak-snc6/196528_158118380910056_153515891370305_283882_234528_n.jpg" /></li>
+		<li><img src="http://sphotos-b.ak.fbcdn.net/hphotos-ak-snc6/196556_159931940728700_153515891370305_293999_6261181_n.jpg" /></li>
+		<li><img src="http://sphotos-b.ak.fbcdn.net/hphotos-ak-ash4/205687_165495210172373_153515891370305_326385_1869822_n.jpg" /></li>
+		<li><img src="http://sphotos-b.ak.fbcdn.net/hphotos-ak-snc6/205600_167760236612537_153515891370305_338177_2160812_n.jpg" /></li>
+		<li><img src="http://sphotos-b.ak.fbcdn.net/hphotos-ak-snc6/248150_174306909291203_153515891370305_374445_3774819_n.jpg" /></li>
+		<li><img src="http://sphotos-b.ak.fbcdn.net/hphotos-ak-snc6/228343_171546129567281_153515891370305_358267_5126730_n.jpg" /></li>
+		<li><img src="http://sphotos-b.ak.fbcdn.net/hphotos-ak-ash4/249232_174478049274089_153515891370305_375652_2662480_n.jpg" /></li>
+		<li><img src="http://sphotos-b.ak.fbcdn.net/hphotos-ak-snc6/268903_186646411390586_153515891370305_435046_34596_n.jpg" /></li>
+		<div class=clearfix></div>
+	</ul>
+	<ul id="set2" class="holder">
+		<li><div id="li1"></div></li>
+		<li><div id="li2"></div></li>
+		<li><div id="li3"></div></li>
+		<li><div id="li4"></div></li>
+		<li><div id="li5"></div></li>
+		<li><div id="li6"></div></li>
+		<li><div id="li7"></div></li>
+		<li><div id="li8"></div></li>
+		<li><div id="li9"></div></li>
+	</ul>
+	<div class="clearfix"></div>
+	</div>
+	<div class="description txtright">
+		Images by <a href="http://www.facebook.com/MichaelShawPhotography">Mike Shaw</a>, Cheshire UK based photographer.
+	</div>
+	</div>
+	
+</section>
+
+<!-- This section is for Splash Screen -->
+<section id="jSplash">
+	<section class="selected">
+		<h2>jPreLoader v2</h2>
+		<strong>A loading screen to preload images using jQuery</strong>
+	</section>
+	<section>
+		<p>Create your own <br/>
+		<span style="font-size:30px; color:#FF6123;">Splash Screen</span>.</p>
+	</section>
+	<section>
+		<p>Customize Progress Bar and Progress Percentage <br/>
+		<span style="font-size:30px; color:#23FF27;">using CSS</span>.</p>
+	</section>
+	<section>
+		<p>Preload all images in <br/> 
+		<span style="font-size:25px; color:#FF23FF;">&lt;img&gt; tag</span> + 
+		<span style="font-size:25px; color:#FF23FF;">CSS background-image</span>.</p>
+	</section>
+</section>
+<!-- End of Splash Screen -->
+
+<!-- Footer -->
+<footer id="footer">
+	<span>&copy; 2012 <a href="http://www.inwebson.com">inWebson.com</a>. Design by <a href="http://www.inwebson.com/contactus">Kenny Ooi</a>. Powered by jQuery and HTML5.</span>
+</footer>
+
+<script>
+$(document).ready( function() {
+	var timer;	//timer for splash screen
+	
+	//navigation swap
+	$('#navigation a').on('click', function() {
+		if( !$(this).hasClass('btn-main') ) {
+			$('#navigation a')
+			.toggleClass('btn-secondary')
+			.toggleClass('btn-main');
+			
+			var tar = $(this).attr('href');
+			$('.holder').fadeOut(500, function() {
+				$(tar).fadeIn(500);
+			});
+		}
+		return false;
+	});
+	$('#set2').hide();
+	$('#header').css('top', '-100px');
+	$('#footer').css('bottom', '-100px');
+	$('#wrapper').hide();
+
+	
+	//calling jPreLoader
+	$('body').jpreLoader({
+		splashID: "#jSplash",
+		loaderVPos: '70%',
+		autoClose: false,
+		closeBtnText: "Let's Begin!",
+		splashFunction: function() {  
+			//passing Splash Screen script to jPreLoader
+			$('#jSplash').children('section').not('.selected').hide();
+			$('#jSplash').hide().fadeIn(800);
+			
+			timer = setInterval(function() {
+				splashRotator();
+			}, 4000);
+		}
+	}, function() {	//callback function
+		clearInterval(timer);
+		$('#footer')
+		.animate({"bottom":0}, 500);
+		$('#header')
+		.animate({"top":0}, 800, function() {
+			$('#wrapper').fadeIn(1000);
+		});
+	});
+	
+	//create splash screen animation
+	function splashRotator(){
+		var cur = $('#jSplash').children('.selected');
+		var next = $(cur).next();
+		
+		if($(next).length != 0) {
+			$(next).addClass('selected');
+		} else {
+			$('#jSplash').children('section:first-child').addClass('selected');
+			next = $('#jSplash').children('section:first-child');
+		}
+			
+		$(cur).removeClass('selected').fadeOut(800, function() {
+			$(next).fadeIn(800);
+		});
+	}
+});
+</script>
+</body>
+</html>
