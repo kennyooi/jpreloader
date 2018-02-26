@@ -1,0 +1,32 @@
+{
+  "name": "jpreloader",
+  "version": "1.0.0",
+  "description": "Preload images for website",
+  "homepage": "https://github.com/alexgivi/jpreloader",
+  "main": [
+    "js/jpreloader.js",
+    "css/jpreloader.css"
+  ],
+  "keywords": [
+    "jquery",
+    "jquery plugin",
+    "bower",
+    "bower jpreloader",
+    "jpreloader"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.2.1"
+  },
+  "authors": {
+    "name": "kennyooi",
+    "web": "https://github.com/kennyooi"
+  },
+  "licenses": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
