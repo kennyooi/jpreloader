@@ -1,7 +1,7 @@
 jpreloader
 ==========
 
-jPreLoader plugin is a jQuery preloader to preload images for website. It create a preloading screen (aka. splash screen) for your website before all your images, and background images are fully loaded. It will come in handy when you wish to preload all the images on your page before exposed to user, especially for those games websites.
+jPreLoader plugin is a jQuery preloader to preload images for website. It create a preloading screen (aka. splash screen) for your website before all your website content (which includes your images and other assets) are loaded completely. It will come in handy when you wish to preload all the images on your page before exposed to user, especially for those games websites. Including a preloader in your website would give a better user experience.
 
 Demo Page
 =========
